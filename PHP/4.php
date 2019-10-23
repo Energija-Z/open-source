@@ -1,20 +1,41 @@
 <?php
-	$username = $_POST['username'];
-	$role = $_POST['role'];
-
-	$veza = mysqli_connect('localhost', 'root', '', 'baza') or die("MYSQL database connection");
-	mysqli_close();
-
-	$upit = "UPDATE tablica SET role = ${role} WHERE username = ${username}";
+	if(!isset($_SESSION))
+		session_start();
 ?>
+<!DOCTYPE html>
+<html>
+	<head><link href="prop/style.css" rel="stylesheet"/></head>
 
-<form>
-	<label>Username:</label> <input type="text" name="username"/>
-	<label>Role:</label>
-	
-	<select role="role">
-		<option>Admin</option>
-		<option>Editor</option>
-		<option>User</option>
-	</select>
-</form>
+	<body>
+<?php
+	$nav = '
+		<nav><ul>
+			<li><a href="?tab=1">Login</a></li>
+	';
+
+	if(isset($_SESSION['role'])){
+		if($_SESSION['role'] == 'administrator')
+			$nav = $nav . '<li><a href="?tab=2">Roles</a></li>';
+
+		if($_SESSION['role'] == 'administrator' || $_SESSION['role'] == 'editor')
+			$nav = $nav . '<li><a href="?tab=3">Content</a></li>';
+
+		if($_SESSION['role'] == 'administrator' || $_SESSION['role'] == 'editor' || $_SESSION['role'] == 'user')
+			$nav = $nav . '<li><a href="?tab=4">Logout</a></li>';
+	}
+
+	$nav = $nav . '</nav></ul>';
+	echo $nav;
+
+	echo '<main>';
+	$tab = $_GET['tab'];
+
+	if($tab == 1) include('prop/login.php');
+	else if($tab == 2) include('prop/roles.php');
+	else if($tab == 3) include('prop/write.php');
+	else if($tab == 4) include('prop/logout.php');
+
+	echo '</main>';
+?>
+	</body>
+</html>

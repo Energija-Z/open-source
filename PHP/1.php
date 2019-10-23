@@ -4,17 +4,17 @@
 
 	<body>
 <?php
-	$nav = "<nav><ul>";
-	$nav = $nav . "<li><a href=''>Početna stranica</a></li>";
-	$nav = $nav . "<li><a href=''>Novosti</a></li>";
-	$nav = $nav . "<li><a href=''>O nama</a></li>";
-	$nav = $nav . "<li><a href=''>Kontakt</a></li>";
-	$nav = $nav . "<li><a href=''>Galerija</a></li>";
-	$nav = $nav . "<li><a href=''>Registracija</a></li>";
-	$nav = $nav . "<li><a href=''>Prijava</a></li>";
-	$nav = $nav . "</nav></ul>";
-
-	echo $nav;
+	echo '
+		<nav><ul>
+			<li><a href="">Početna stranica</a></li>
+			<li><a href="">Novosti</a></li>
+			<li><a href="">O nama</a></li>
+			<li><a href="">Kontakt</a></li>
+			<li><a href="">Galerija</a></li>
+			<li><a href="">Registracija</a></li>
+			<li><a href="">Prijava</a></li>
+		</nav></ul>
+	';
 ?>
 	</body>
 </html>

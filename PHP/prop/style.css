@@ -112,6 +112,10 @@ main > form {
 	margin:auto;
 }
 
+nav + main {
+	clear:both;
+}
+
 main > form > div {
 	text-align:center;
 	margin:1em 0;
