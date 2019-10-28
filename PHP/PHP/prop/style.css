@@ -1,0 +1,191 @@
+* {
+	max-width:1024px;
+	padding:0;
+	margin:auto;
+	box-sizing:border-box;
+}
+
+header, nav {
+	width:100%;
+}
+
+header > img {
+	height:250px;
+	width:100%;
+}
+
+nav ul {
+	font-family:Helvetica;
+	text-align:center;
+	list-style-type:none;
+	width:100%;
+}
+
+nav li {
+	padding:6px 0;
+	float:left;
+	width:20%;
+	background:lightgreen;
+}
+
+nav a {
+	display:block;
+	text-decoration:none;
+}
+
+h1 {
+	margin-bottom:0.5em;
+}
+
+figure, figure ~ p {
+	float:left;
+}
+
+main h1 + figure {
+	min-height:initial;
+}
+
+figure {
+	padding:6px;
+	border:1px solid black;
+	margin-right:1em;
+}
+
+main header > h1 + nav li {
+	background:initial;
+	width:initial;
+}
+
+main header > h1 + nav li img {
+	width:1em;
+	height:auto;
+	margin-left:4px;
+}
+
+footer {
+	float:left;
+	width:100%;
+	background:purple;
+	color:white;
+	padding:0.5em 0;
+}
+
+article li {
+	list-style-type:none;
+	padding:0.5em 0;
+	border-bottom:1px solid black;
+	float:left;
+	width:100%;
+}
+
+article li img {
+	float:left;
+	margin-right:1.5em;
+}
+
+article li div {
+	float: left;
+	width:calc(100% - 275px - 1.5em;);
+}
+
+article li a {
+	font-size:2em;
+	font-family:Arial;
+}
+
+article li span {
+	color:darkgrey;
+}
+
+div > figure {
+	margin:0 1em 1.5em;
+	width:calc(100% / 3 - 2em);
+	text-align:center;
+}
+
+figure img {
+	max-height:200px;
+}
+
+main > form {
+	width:800px;
+	margin:auto;
+}
+
+nav + main {
+	clear:both;
+}
+
+main > form > div {
+	text-align:center;
+	margin:1em 0;
+}
+
+main > form > div iframe {
+	width:800px;
+	height:400px;
+}
+
+label {
+	width:120px;
+	float:left;
+}
+
+input {
+	width:120px;
+	float:left;
+}
+
+button {
+	width:100px;
+	padding:4px 0;
+	clear:both;
+}
+
+h1 ~ figure {
+	min-height:240px;
+	margin:0 1em 1.5em;
+	width:calc(50% - 2em - 2px);
+	text-align:center;
+	line-height:25px;
+}
+
+main aside {
+	text-align:center;
+}
+
+main video {
+	width:600px;
+	height:auto;
+	margin:auto;
+}
+
+@media (max-width:500px) {
+	nav li {
+		width:100%;
+	}
+
+	main > form {
+		width:100%;
+	}
+
+	main > form > div iframe {
+		width:100%;
+		height:400px;
+	}
+
+	label, input {
+		width:100%;
+	}
+
+	button {
+		float:left;
+		width:100%;
+	}
+	
+	div > figure {
+		min-height:initial;
+		width:100%;
+		margin:0 0 1em;
+	}
+}
